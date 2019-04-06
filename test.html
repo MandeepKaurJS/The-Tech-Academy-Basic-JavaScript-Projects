@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>
+            The Dom
+        </title>
+    </head>
+    <body>
+        <div>
+            <h1>The document Object Model</h1>
+            <p>
+                the dom is a logical structure or an abstraction of xml/html
+            </p>
+        </div>
+        <div>
+            <p>
+                the Dom will arrange HTML elements in a tree-like data structure
+            </p>
+        </div>
+        <script>
+            function changeText(){
+                let pElement=document.getElementsByTagName("p");
+                for(let n=0; n < pElement.length; n++){
+                    pElement[n].innerHTML= "New Text";
+                }
+            }
+            setTimeout(changeText,2000);
+            function myFunction(){
+    var num1 = 2;
+    var num2 = 12;
+    var equality = (num1 == "2");
+    var strict = (num1=== "2");
+    document.write("equality :"+ equality+"<br>");
+    document.write("strict :"+ strict +"<br><br>");
+    document.write("data type :"+typeof num1);
+    document.write("<br> data Type"+typeof "2");
+    var test=isNaN(num2);
+    console.log("isNaN(num2):"+test);
+    var words="words";
+    var array = [1,2,3,4,5]
+    document.write("<br> Data type"+typeof array);
+    var test2=isNaN(words);
+    console.log("<br>Data type: "+test2);
+    var results=num1+num2;
+    document.write("<br> Data Type:"+typeof results);
+    console.log(num1+" + "+num2+"="+results);
+};
+myFunction()
+var mycar=new myfunction("ford","mustang");
+var mycar2=new myfunction("ford","F150");
+function animal(name,eyes,ears,nose,legs,fur){
+    this.name=name;
+    this.eyes=eyes;
+    this.ears=ears;
+    this.nose=nose;
+    this.legs=legs;
+    this.fur=fur;
+    document.write("<br><br> Species: " +this.name);
+    document.write("<br>eyes: " +this.eyes);
+    document.write("<br>Ears: " +this.ears);
+    document.write("<br>nose: " +this.nose);
+    document.write("<br>legs: " +this.legs);
+    document.write("<br>fur : " +this.fur);
+};
+var zebra=new animal("zebra",2,2,1,4,true);
+var snake=new animal("snake",2,0,1,0,false);
+function myfunction(make,model){
+    this.make=make;
+    this.model=model;
+    document.write(this.make +":"+ this.model);
+};
+        </script>
+    </body>
+</html>
