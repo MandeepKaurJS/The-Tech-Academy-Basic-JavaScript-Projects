@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<hmtl>
+    <head>
+        <style>
+            .frame1{
+                margin:0 auto; 
+                text-align:center;
+                height: 265px;
+                width :200px; 
+                border:8px solid #000;
+            }
+            #total{
+                text-align:right;
+                margin:4% 8%;
+                background-color: lightgray;
+                border: 2px solid #000;;
+            }
+            button{
+                color:lightpink;margin: 2% 1px; height: 35px; width:80px;
+            }
+            button:hover{
+                color:#0000;font-weight: bold;border:2px solid #000;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="frame1">
+            <h1 id="total">0.00</h1>
+            <br>
+            Number 1: $nbsp$nbsp$nbsp$nbsp$nbsp$nbsp$nbsp<input type="text" id="txt2" size="4">
+            Number 2: $nbsp$nbsp$nbsp$nbsp$nbsp$nbsp$nbsp<input type="text"id="txt1" size="4">
+            <br><br><br>
+            <input type="radio" name="calc" value="*"checked>*</input>&nbsp&nbsp
+            <input type="radio" name="calc" value="./"checked>/</input>&nbsp&nbsp
+            <input type="radio" name="calc" value="+"checked>+</input>&nbsp&nbsp
+            <input type="radio" name="calc" value="-"checked>-</input>
+            <br><br>
+            <button type="button" onclick="Calc();">Calculate</button>
+            <button ty="button" onclick="Clear();">Claer</button>
+        </div>
+        <script>
+            var txt1=document.getElementById("txt1");
+            var txt2=document.getElementById("txt2");
+            var total=document.getElementById("total");
+            function Calc(){
+                var result=document.querySelector('input[name="calc"]:checked').value;//checked
+                var num1=parseInt(txt1.value);
+                console.log(typeof num1);
+                console.log(isNaN(num1));
+                var num2=parseInt(txt2.value);
+                console.log(typeof num2);
+                console.log(isNaN(num2));
+                if(result=="*"){
+                    total.innerHTML=(num1*num2).toFixed(2);
+                }
+                else if(result=="/"){
+                    total.innerHTML=(num1/num2).toFixed(2);
+                }else if(result=="+"){
+                    total.innerHTML=(num1+num2).toFixed(2);
+                }else (result=="-"){
+                    total.innerHTML=(num1-num2).toFixed(2);
+                }
+            }
+        </script>
+    </body>
+</hmtl>
