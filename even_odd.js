@@ -1,8 +1,5 @@
 for(let i=0; i<=10000;i++){
-    if(i===0){
-        console.log(") is even number:  "+ i);
-    }
-    else if(i%2===0){
+    if(i%2===0){
         console.log("number is even:  "+ i);
     }
     else{

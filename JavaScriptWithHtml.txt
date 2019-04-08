@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>
+            javascriptTest
+        </title>
+        <style>
+                button{
+                    font-size: 1.5rem;font-weight: 75px;width: 100px;
+                }
+            </style>
+    </haed>
+    <body>
+        <h1 id="countbutton">Click button for colors</h1>
+        <br><br>
+        <button class="btn" onclick="up()">Start!</button>
+        <script>
+            var i=0;
+            var myarray = [10,9,8,7,6,5,4,3,2,1,"Happy new year"];
+            function up(){
+                if(i<myarray.length){
+                    document.getElementById("countbutton").style.color="red";
+                    document.getElementById("countbutton").innerHTML=myarray[i];
+                    i++;
+                }
+                window.setTimeout(up, 250);
+            }
+        </script>
+    </body>
+</html>
