@@ -8,15 +8,18 @@
                 height: 265px;
                 width :200px; 
                 border:8px solid #000;
+                border-radius: 5%;
+                box-shadow: 10px 10px 30px gray;
             }
             #total{
                 text-align:right;
                 margin:4% 8%;
                 background-color: lightgray;
-                border: 2px solid #000;;
+                border: 2px solid #000;
+                border-radius: 5%;
             }
             button{
-                color:lightpink;margin: 2% 1px; height: 35px; width:80px;
+                color:rgb(195, 182, 255);margin: 2% 1px; height: 35px; width:80px;
             }
             button:hover{
                 color:#0000;font-weight: bold;border:2px solid #000;
@@ -27,13 +30,13 @@
         <div class="frame1">
             <h1 id="total">0.00</h1>
             <br>
-            Number 1: $nbsp$nbsp$nbsp$nbsp$nbsp$nbsp$nbsp<input type="text" id="txt2" size="4">
-            Number 2: $nbsp$nbsp$nbsp$nbsp$nbsp$nbsp$nbsp<input type="text"id="txt1" size="4">
+            Number 1: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" id="txt2" size="4"><br>
+            Number 2: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text"id="txt1" size="4">
             <br><br><br>
-            <input type="radio" name="calc" value="*"checked>*</input>&nbsp&nbsp
-            <input type="radio" name="calc" value="./"checked>/</input>&nbsp&nbsp
-            <input type="radio" name="calc" value="+"checked>+</input>&nbsp&nbsp
-            <input type="radio" name="calc" value="-"checked>-</input>
+            <input type="radio" name="calc" value="*"checked> *</input>&nbsp&nbsp
+            <input type="radio" name="calc" value="/"> /</input>&nbsp&nbsp
+            <input type="radio" name="calc" value="+"> +</input>&nbsp&nbsp
+            <input type="radio" name="calc" value="-"> -</input>
             <br><br>
             <button type="button" onclick="Calc();">Calculate</button>
             <button ty="button" onclick="Clear();">Claer</button>
@@ -57,10 +60,14 @@
                     total.innerHTML=(num1/num2).toFixed(2);
                 }else if(result=="+"){
                     total.innerHTML=(num1+num2).toFixed(2);
-                }else (result=="-"){
+                }else if(result=="-"){
                     total.innerHTML=(num1-num2).toFixed(2);
-                }
-            }
+                };
+            };
+            function Clear(){
+                txt1.value="";txt2.value="";total.innerHTML="0.00";
+            };
+
         </script>
     </body>
 </hmtl>
