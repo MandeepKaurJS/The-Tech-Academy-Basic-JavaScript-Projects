@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static from staticfiles %}
+
+{% block title %}Top 10 Restaurants{% endblock %}
+
+
+{% block content %}
+{% include 'nav.html' %} <!--Add navigation to restaurant html-->
+
+    <section class="hero is-primary">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    Current Top Ten Restaurants
+                </h1>
+            </div>
+        </div>
+    </section>
+     <div class="container">
+        <section class="section">
+            <ol>
+
+                {% for biz in results %}
+                    <img src={{biz.image_url}} style="width:150px;height:150px;"></img>
+                    <p>Name:{{biz.name}}</p>
+                    <p>City:{{biz.location.city}}</p>
+                    <p>Phone:{{biz.phone}}</p>
+                    <p>Rating:{{biz.rating}}</p>
+
+
+
+
+                {% endfor %}
+            </ol>
+        </section>
+    </div>
+{%include 'footer.html' %}
+{% endblock %}

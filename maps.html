@@ -12,8 +12,8 @@
         function addDirections() {
           var directions = L.mapquest.directions();
           directions.route({
-            start: 'Seattle,Wa',
-            end: 'Auburn,WA',
+            start: document.getElementById('to').value,
+            end: document.getElementById('from').value,
             options: {
               enhancedNarrative: true
             }

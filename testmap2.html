@@ -3,15 +3,27 @@
     <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
     <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
  <script>
-L.mapquest.key = 'qGyMswGafi2puTNqSP91ETXcNRDFrAyG';
 
+L.mapquest.key = 'qGyMswGafi2puTNqSP91ETXcNRDFrAyG';
+window.onload = function() {
+        L.mapquest.key = 'qGyMswGafi2puTNqSP91ETXcNRDFrAyG';
 // 'map' refers to a <div> element with the ID map
- L.mapquest.map('map', {
+ var map=L.mapquest.map('map', {
   center: [37.7749, -122.4194],
   // L.mapquest.tileLayer('map') is the MapQuest map tile layer
   layers: L.mapquest.tileLayer('map'),
   zoom: 12
 });
+L.mapquest.directionsControl({
+          routeSummary: {
+            enabled: false
+          },
+          narrativeControl: {
+            enabled: true,
+            compactResults: true
+          }
+        }).addTo(map);
+};
 </script>
 </head>
  <body >
