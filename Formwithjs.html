@@ -1,6 +1,6 @@
 <html>
     <head>
-        <script src="jquery.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     </head>
     <body>
         <form>
@@ -14,9 +14,9 @@
                 <input type="radio" name="species" value="dog">Bird
             </p>
             <p>
-                <input type="checkbox" value="happy">Happy
-                <input type="checkbox" value="cute">Cute
-                <input type="checkbox" value="smart">Smart
+                <input type="checkbox" value="happy"> Happy
+                <input type="checkbox" value="cute"> Cute
+                <input type="checkbox" value="smart"> Smart
             </p>
         </form>
         <p>
@@ -24,9 +24,7 @@
             <span id="genderSpan"></span><span id="speciesSpan">animal</span>
         </p>
         <script>
-            
-
-            // handling select box
+             // handling select box
             $("select[name='choose']").change(function() {
             $('#genderSpan').html($(this).val());
             });
@@ -37,7 +35,7 @@
                 $('#speciesSpan').html($(this).val());
             }
             });
-        var allChecked = [];
+            var allChecked = [];
 
         $('input:checkbox').change(function() {
             var value = $(this).val();
