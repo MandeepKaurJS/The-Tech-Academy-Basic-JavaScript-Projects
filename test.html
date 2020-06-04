@@ -35,7 +35,7 @@
     document.write("equality :"+ equality+"<br>");
     document.write("strict :"+ strict +"<br><br>");
     document.write("data type :"+typeof num1);
-    document.write("<br> data Type"+typeof "2");
+    document.write("<br> data Type: "+typeof "2");
     var test=isNaN(num2);
     console.log("isNaN(num2):"+test);
     var words="words";
@@ -48,8 +48,8 @@
     console.log(num1+" + "+num2+"="+results);
 };
 myFunction()
-var mycar=new myfunction("ford","mustang");
-var mycar2=new myfunction("ford","F150");
+var mycar=new myfunction("ford ","mustang");
+var mycar2=new myfunction("ford  ","F150");
 function animal(name,eyes,ears,nose,legs,fur){
     this.name=name;
     this.eyes=eyes;
@@ -69,7 +69,7 @@ var snake=new animal("snake",2,0,1,0,false);
 function myfunction(make,model){
     this.make=make;
     this.model=model;
-    document.write(this.make +":"+ this.model);
+    document.write(this.make +" : "+ this.model);
 };
         </script>
     </body>

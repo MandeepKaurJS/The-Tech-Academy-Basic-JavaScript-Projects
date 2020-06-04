@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>JavaScript - read JSON from URL</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+
+        var getJSON = function(url, callback) {
+        
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', url, true);
+            xhr.responseType = 'json';
+            
+            xhr.onload = function() {
+            
+                var status = xhr.status;
+                
+                if (status == 200) {
+                    document.getElementById("result").innerHTML = JSON.stringify(data, undefined, 2)
+                    callback(null, xhr.response);
+                } else {
+                    callback(status);
+                }
+            };
+            
+            xhr.send();
+        };
+        
+        getJSON('https://bhamilton1000.github.io/SampleData/Web-Question-001/UnitedStatesWithCounties.json',  function(err, data) {
+            
+            if (err != null) {
+                console.error(err);
+            } else {
+                
+                var text = `State: ${data.StateName}
+                            County: ${data.Counties}
+                            Population: ${data.population}`
+            
+                console.log(text);
+               var show=document.getElementById("statename").innerHTML=data.StateName;
+                console.log(show);
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <div id="result" style="color: brown;"></div>
+    <div id="statename" style="color: chartreuse;"></div>
+    
+</body>
+</html>

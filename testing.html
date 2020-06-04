@@ -1,0 +1,39 @@
+
+
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            function parseCSV1(file) {
+            // Use first element to choose the keys and the order
+            var keys = Object.keys(file[0]);
+
+            // Build heade
+            var result = keys.join(",") + "\n";
+
+            // Add the rows
+            array.forEach(function(obj){
+                result += keys.map(k => obj[k]).join(",") + "\n";
+            });
+
+            return result;
+        }
+        function parseCSV(file){
+            var titles=file.slice(0,file.indexOf('\n')).split(',');
+            return file.slice(file.indexOf('\n')+1).split('\n').map(v=> {
+                values=v.split(',');
+                return titles.reduce((obj,title,index)=>(obj[title]=values[index]),obj),{}});
+        }
+        function parseCSV(input) {
+        var rows = input.split(/\r?\n/);
+        var keys = rows.shift().split(",");
+        return rows.map(function(row) {
+            return row.split(",").reduce(function(map, val, i) {
+            map[keys[i]] = val;
+            return map;
+        }, {});
+    });
+}
+        </script>
+    </body>
+</html>
