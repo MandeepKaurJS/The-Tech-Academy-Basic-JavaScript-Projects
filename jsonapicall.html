@@ -14,9 +14,10 @@
             xhr.onload = function() {
             
                 var status = xhr.status;
-                
+                var State=xhr.StateName;
                 if (status == 200) {
-                    document.getElementById("result").innerHTML = JSON.stringify(data, undefined, 2)
+
+                    document.getElementById("result").innerHTML = JSON.stringify(State, undefined, 2)
                     callback(null, xhr.response);
                 } else {
                     callback(status);
@@ -37,8 +38,7 @@
                             Population: ${data.population}`
             
                 console.log(text);
-               var show=document.getElementById("statename").innerHTML=data.StateName;
-                console.log(show);
+               
             }
         });
     </script>
