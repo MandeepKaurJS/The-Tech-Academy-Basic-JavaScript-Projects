@@ -64,7 +64,25 @@ and comment the same value as we did in last file.
 now set the usename and pswd under tomcat-users.xml file by using vim tomcat-users.xml
 we should set the role name under this file by uncommenting roles and set role name 
 manager-gui and another one is manager-script and give username as you want and pswd and set roles
-manager-gui and manager-script then login with those credentials. 
+manager-gui and manager-script then login with those credentials.
+example :  <role rolename="manager-gui"/>
+ <role rolename="manager-script"/>
+ <role rolename="manager-jmx"/>
+ <role rolename="manager-status"/>
+ <user username="admin" password="admin" roles="manager-gui, manager-script, manager-jmx, manager-status"/>
+ <user username="deployer" password="deployer" roles="manager-script"/>
+ <user username="tomcat" password="s3cret" roles="manager-gui"/> 
+8.
+Now ready to deploy your project under tomcat server and create new job in jenkins in order to do that.
+and set the goals for it called package. how to push our war file on tomcat server we need 
+plugins called deploy to container.after installing plugins go to poast build choose deploy war to container
+and give the default path for war file by */**.war this and then give the context path relavant to project
+name like addressbook and then add the container by clicking on add container by choosing tomcat8
+and then add your tomcat server credentials username tomcat and password by clicking on add button.
+9. next step is adding tomcat url: give your local url like: http://18.216.137.3:1030/urprojectname
+eg. http://18.216.137.3:1030/addressbook/ and open this projectunder tomcat then u willget the output 
+of your project.  
+
 
 
 
