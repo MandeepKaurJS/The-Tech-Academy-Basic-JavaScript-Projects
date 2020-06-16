@@ -62,8 +62,9 @@ and then open the manager file by using this /opt/apache-tomcat-8.5.56/webapps/m
 and comment the same value as we did in last file.
 7.
 now set the usename and pswd under tomcat-users.xml file by using vim tomcat-users.xml
-we should set the role name under this file by uncommenting toles and set role name 
-manager-gui and unanotherone is manager-script
+we should set the role name under this file by uncommenting roles and set role name 
+manager-gui and another one is manager-script and give username as you want and pswd and set roles
+manager-gui and manager-script then login with those credentials. 
 
 
 
