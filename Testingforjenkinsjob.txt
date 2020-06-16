@@ -1,1 +1,73 @@
+https://github.com/yankils
+
+exAmple 2
+https://github.com/htshshrm2/devops/blob/master/pom.xml
+
 Hello this my file which will show version control with jenkins
+
+jenkins CI/CD workflow implementation with real-time project
+
+We need to connect with our version control e.g github or any source control and then configure this job with jenkins for compile using poll SCM in jenkins .
+2.Compile
+CI/CD starts from Code review after pulling source code from github. goals should be same like it's compile only. 
+3.Code Review
+step 3rd for CI/Cd is code review where we are going to syntax check of our entire project.in order to do this 
+we should set PMD by using -P metrics pmd:pmd(programmer mistake detector)
+need to install PMD plugin to do that.
+
+4.Unit Test
+the entire code report generate in this step. Entire project strength will be check and we need 
+junit plugin for this step and need surefiles/tar.xml.
+5.Matrics Check
+each module strength is going to check one by one in this step call matrics check.we need 
+coberture plugins for this 
+need goal cobertura:cobertura -Dcobertura.report.format=xml
+
+6.after finishing all the 5 steps we need to wrap our project into a package in the form of war. or tar file. 
+
+set the goal as package for this step we don't need any plugin for this.
+after this schedule tasks accordingly in build triggers,
+schedule after project and build periodically .
+
+
+7.Deployement 
+need plugin called deploy to container to container.
+
+1.we need to launch new instance for this called AMI linux and tomcat. 
+and install java syntax yum install java-1.8* -y
+install apache tomcat latest version
+get the tar.gz link from tomcatapache officail website under tomcat in core and copy the link and install it in tmp folder. 
+2. after installing tomcat copy it to under opt folder using this command:
+cp -r filename which has tar.gz /opt/ go to opt folder cd /opt/
+and untar the file using tar -xvzf(meaning extract vross forcefully) name apcahe .
+3. then we need to start the pache server to apcahe sing cd name of apcahe and move to bin 
+directory cd bin/ and do command ./startup.sh and need a service that is called catalina.sh
+in order to start service of tomcat than used :cat catalina.sh 
+4. to see te server we should allow the security server Go to ec2 tomcat instance click on secuirty 
+group click on inbound and add new rules which allow your port to access by choosing custome tcp
+and putt ur port under port range. now we need username and password in order to deploy an
+application on tomcat server.
+5. then go to under bin file called conf. by using cd ../conf/ command under this we have 
+file called server.xml and open this file by using vim server.xml and under this file
+serch for connector option in order to connect by ur own port number. 
+port range is usually from 0 to 65535 and give ur port number as u want and save it suing :wq!
+and then shutdown tomcat server by go back to ur bin directory using ./shutdown.sh and restart
+after all these stepscreate username and pswd.
+6. do cat server.xml |grep connector
+use context.xml command for uname n pwd :we should commment default values 
+find / -name context.xml to see manager app n other aaps
+choose /opt/apache-tomcat-8.5.56/webapps/host-manager/META-INF/context.xml this file to chane value
+inside context comment the only value part and save.
+and then open the manager file by using this /opt/apache-tomcat-8.5.56/webapps/manager/META-INF/context.xml
+and comment the same value as we did in last file.
+7.
+now set the usename and pswd under tomcat-users.xml file by using vim tomcat-users.xml
+we should set the role name under this file by uncommenting toles and set role name 
+manager-gui and unanotherone is manager-script
+
+
+
+
+
+
+
