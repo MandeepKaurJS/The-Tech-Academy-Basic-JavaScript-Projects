@@ -81,7 +81,9 @@ name like addressbook and then add the container by clicking on add container by
 and then add your tomcat server credentials username tomcat and password by clicking on add button.
 9. next step is adding tomcat url: give your local url like: http://18.216.137.3:1030/urprojectname
 eg. http://18.216.137.3:1030/addressbook/ and open this projectunder tomcat then u willget the output 
-of your project.  
+of your project and your war file is push to tomcat server. it's deploy on tomcat server.
+10.
+your war file should be under apache server under webapps.  
 
 
 
