@@ -4,7 +4,7 @@ var getData = function(url, callback) {
     httpReq.open('GET', url);
     httpReq.responseType = 'application/json';
     
-    //httpReq.addEventListener('progress', updateProgress);
+    httpReq.addEventListener('progress', updateProgress);
     httpReq.setRequestHeader('Content-Type', 'text/plain');
 		httpReq.onreadystatechange = function() {
 			if (this.readyState === 4 && this.status === 200) {

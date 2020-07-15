@@ -1,0 +1,28 @@
+<html> 
+<head> 
+<title>t1</title> 
+<script type="text/javascript"> 
+	function addNode() { 
+     var newP = document.createElement("p"); 
+	var textNode = document.createTextNode(" This is a new text node"); 
+    newP.appendChild(textNode); 
+    document.getElementById("firstP").appendChild(newP); } 
+
+</script> 
+<script src= "https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script></head> 
+<body> <p id="firstP">firstP<p> </body> 
+    <h1>HTML Interview Questions Google Map</h1>
+          <div id="map" style="width: 400px; height: 400px; background: yellow">
+       </div>
+      <script>
+                function myMap() {
+                var mapOptions = {
+                           center: new google.maps.LatLng(51.5, -0.12),
+                          zoom: 10
+             }
+                     var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+              }
+</script>
+             
+</body>
+</html>
